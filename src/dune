@@ -1,0 +1,37 @@
+(library
+  (name App)
+  (wrapped false)
+  (libraries
+    bigarray
+    Revery
+    Bread
+    timber
+    fp
+    fs.lib
+    dir.lib
+    global-state
+  )
+  (preprocess (pps brisk-reconciler.ppx))
+  (modules :standard \ AppExe)
+)
+
+(executable
+  (package AppExe)
+  (name AppExe)
+  (js_of_ocaml (javascript_files stubs.js))
+  (public_name AppExe)
+  (libraries
+    App
+    Revery
+  )
+  (preprocess (pps brisk-reconciler.ppx))
+  (modules AppExe)
+)
+
+(install
+  (section bin)
+  (package AppJS)
+  (files AppExe.bc.js)
+)
+
+(include_subdirs unqualified)

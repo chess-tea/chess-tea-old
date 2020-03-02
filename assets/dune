@@ -1,0 +1,13 @@
+(install
+  (section bin)
+  (package AppExe)
+  (files
+    FiraCode-Bold.ttf
+    FiraCode-Light.ttf
+    FiraCode-Medium.ttf
+    FiraCode-Regular.ttf
+    FiraCode-Retina.ttf
+    FiraSans-Regular.ttf
+    Roboto-Regular.ttf
+  )
+)
