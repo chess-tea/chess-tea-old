@@ -62,12 +62,21 @@ module TopGutter = {
   let style =
     Style.[flexDirection(`Column), alignItems(`Stretch), flexGrow(1)];
 
-  let make = () => {
+  let%component make = () => {
+    let%hook (route, setRoute) = Router.useRoute();
+
     <View style>
-      <Icon text="A" />
-      <Icon text="B" active=true />
-      <Icon text="C" />
-      <Icon text="D" />
+      <Icon text="M" active={route == Main} onClick={_ => setRoute(Main)} />
+      <Icon
+        text="C"
+        active={route == ChessBoard}
+        onClick={_ => setRoute(ChessBoard)}
+      />
+      <Icon
+        text="P"
+        active={route == Playground}
+        onClick={_ => setRoute(Playground)}
+      />
     </View>;
   };
 };

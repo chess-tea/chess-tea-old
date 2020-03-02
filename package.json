@@ -45,8 +45,9 @@
   },
   "dependencies": {
     "@brisk/brisk-reconciler": "github:briskml/brisk-reconciler#0a2e476",
-    "@chess-tea/bread": "chess-tea/bread:package.json#a59f8ab",
-    "@chess-tea/global-state": "chess-tea/global-state:package.json#7e6e93b",
+    "@chess-tea/bread": "chess-tea/bread#a59f8ab",
+    "@chess-tea/grout": "chess-tea/grout#c0328ea",
+    "@chess-tea/global-state": "chess-tea/global-state#7e6e93b",
     "@esy-ocaml/reason": "^3.4.0",
     "@reason-native/console": "^0.0.3",
     "@reason-native/rely": "^3.1.0",
@@ -61,7 +62,8 @@
     "@opam/cmdliner": "1.0.2",
     "esy-cmake": "prometheansacrifice/esy-cmake#2a47392def755",
     "timber": "glennsl/timber#ae065bb",
-    "@reason-native/fp": "facebookexperimental/reason-native:fp.json#d08d115"
+    "@reason-native/fp": "facebookexperimental/reason-native:fp.json#d08d115",
+    "@chess-tea/global-state": "chess-tea/global-state#7e6e93b"
   },
   "devDependencies": {
     "ocaml": "~4.8",

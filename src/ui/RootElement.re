@@ -13,14 +13,13 @@ let textStyle =
 
 module ObjectBrowser = {
   let style =
-    Style.
-      [
-        backgroundColor(C.Color.bgDark),
-        width(220),
-        padding(8),
-        overflow(`Hidden),
-      ];
-      // borderRight(~color=C.Color.borderInverse, ~width=1),
+    Style.[
+      backgroundColor(C.Color.bgDark),
+      width(220),
+      padding(8),
+      overflow(`Hidden),
+    ];
+  // borderRight(~color=C.Color.borderInverse, ~width=1),
   let make = () => {
     <View style> <Text style=textStyle text="Objects" /> </View>;
   };
@@ -70,8 +69,18 @@ module MainContent = {
       flexDirection(`Row),
       flexGrow(1),
     ];
-  let make = () => {
-    <View style> <LeftNav /> <ObjectBrowser /> <Workspace /> </View>;
+
+  let%component make = () => {
+    let%hook (route, setRoute) = Router.useRoute();
+    let view =
+      switch (route) {
+      | Main =>
+        <View style> <LeftNav /> <ObjectBrowser /> <Workspace /> </View>
+      | ChessBoard =>
+        <View style> <LeftNav /> <ObjectBrowser /> <Workspace /> </View>
+      | Playground => <View style> <LeftNav /> </View>
+      };
+    view;
   };
 };
 
